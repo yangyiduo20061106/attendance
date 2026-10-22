@@ -43,16 +43,16 @@ public class Attend extends HttpServlet {
                     }
                 }
             }
-            out.println("<br><a href= "index.html\">Attendance Submission</a >");
+            out.println("<br>Return to: index.html");
         } else if (!studentId.trim().isEmpty()) {
             synchronized (sid2seat) {
                 sid2seat.put(studentId.trim(), seatId == null ? "" : seatId.trim());
             }
             out.println(studentId + ":" + seatId + " is recorded:<br><br>");
-            out.println("<a href=\"index.html\">Attendance Submission</a > | <a href=\"Attend\">Attendee List</a >");
+            out.println("Return to: index.html OR Go to: Attend");
         } else {
             out.println("Student Id can not be blank<br><br>");
-            out.println("<a href=\"index.html\">Attendance Submission</a > | <a href=\"Attend\">Attendee List</a >");
+            out.println("Return to: index.html OR Go to: Attend");
         }
     }
 }
